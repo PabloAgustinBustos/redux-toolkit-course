@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import CartItem from './CartItem';
-import { calculateTotals, clearCart } from '../features/cart/cartSlice';
+import { calculateTotals, getCartItems } from '../features/cart/cartSlice';
 import { setModalTo } from '../features/modal/modalSlice';
 
 const CartContainer = () => {
-    const {cartItems, total, amount} = useSelector(store => store.cart);
+    const {cartItems, total} = useSelector(store => store.cart);
     const dispatch = useDispatch();
 
     useEffect(() => {
